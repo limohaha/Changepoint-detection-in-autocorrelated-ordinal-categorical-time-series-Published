@@ -6,7 +6,7 @@ library(RcppArmadillo)
 options("scipen"=10) # show all digits
 
 # Self-defined function
-sourceCpp("To_Muhammed/myfuncClipPaper.cpp")
+sourceCpp("Tools/myfuncClipPaper.cpp")
 
 Varin2006Sim <- function(par=NULL, Ts=NULL, K=NULL, myseed=NULL){
   Ts <- Ts + 100 # first 100 observations will be dropped
