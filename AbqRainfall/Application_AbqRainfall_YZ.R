@@ -16,7 +16,7 @@ library(astsa)
 options("scipen"=10) # show all digits
 
 # Self-defined function
-sourceCpp("To_Muhammed/myfuncClipPaper.cpp")
+sourceCpp("Tools/myfuncClipPaper.cpp")
 
 
 UniCpDetect <- function(res_sim = NULL, 
