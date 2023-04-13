@@ -172,8 +172,7 @@ Re_latent <- function(par=NULL, DesignX=NULL, X=NULL){
 ##################################################
 
 # 0. Read and subset data
-Abq <- read_csv("~/Desktop/Changepoint/aop/aop_singleCP/CpDetectClip_Li_Lu_2021/5AbqRainfall/data/Abq19310301_20201211.csv",
-                col_types = cols(DATE = col_date(format = "%Y-%m-%d")))
+Abq <- read_csv("Abq19310301_20201211.csv", col_types = cols(DATE = col_date(format = "%Y-%m-%d")))
 Abq <- as.data.frame(Abq[,c("DATE", "PRCP")])
 # select data range by changing starting and ending values
 pstart <- which(as.character(Abq$DATE)== "1990-01-01")
@@ -473,11 +472,9 @@ round(summary(factor(mydat$Catg[tauestZ:Ts])) / sum(summary(factor(mydat$Catg[ta
 ##################################################
 
 # setEPS()
-# postscript("/Users/limo/Desktop/ClipVerify/PaperScriptsFinal/pic/Figure1.eps",
-#            width = 14, height = 10)
+# postscript("Figure1.eps", width = 14, height = 10)
 # setEPS()
-# postscript("/Users/limo/Desktop/PPTFigure1.eps",
-#            width = 14, height = 10)
+# postscript("PPTFigure1.eps", width = 14, height = 10)
 par(cex.lab=1.2, cex.axis=1.2, mfrow=c(2,1))
 tmp <- c(1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000)
 plot(x=1:Ts, y=mydat$PRCP, type="l", col="darkgrey",
@@ -503,8 +500,7 @@ axis(2, at = c(1,2,3), cex.axis=1)
 #-------------- Application Figure 1  -----------# Time Series with Expected value as mean structure
 ##################################################
 # setEPS()
-# postscript("/Users/limo/Desktop/ClipVerify/PaperScriptsFinal/pic/ApplyFigure1.eps",
-#            width = 14, height = 7)
+# postscript("ApplyFigure1.eps", width = 14, height = 7)
 par(cex.lab=1.2, cex.axis=1.2, mfrow=c(1,1))
 plot(x=1:Ts, y=mydat$Catg+1, type="l", col="darkgrey",
      xlab="Year", ylab="Categorized Rainfall",
@@ -534,8 +530,7 @@ legend("top", horiz = T, legend=c("Before Changepoint", "After Changepoint"),
 #----- Application Figure 2  ------# ACF of Prediction Residuals for First fit
 ####################################
 # setEPS()
-# postscript("/Users/limo/Desktop/ClipVerify/PaperScriptsFinal/pic/ApplyFigure2.eps",
-#            width = 14, height = 7)
+# postscript("ApplyFigure2.eps", width = 14, height = 7)
 par(cex.lab=1.2, cex.axis=1.2, mfrow=c(1,1))
 plot(acf(FitRes11$ItY, plot=F, lag.max = 60), ylim=c(-0.04, 0.04), main="")
 # dev.off()
@@ -544,8 +539,7 @@ plot(acf(FitRes11$ItY, plot=F, lag.max = 60), ylim=c(-0.04, 0.04), main="")
 #----- Application Figure 3  ------# CUSUM Test Statistics Plot on Y
 ####################################
 # setEPS()
-# postscript("/Users/limo/Desktop/ClipVerify/PaperScriptsFinal/pic/ApplyFigure3.eps",
-#            width = 14, height = 7)
+# postscript("ApplyFigure3.eps", width = 14, height = 7)
 par(cex.lab=1, cex.axis=1.2, mfrow=c(1,1))
 plot(x=1:Ts, y=FitRes11$CpCsm, type="l", col="black",
      xlab="Year", ylab=expression('CUSUM'['I'](tau)),
@@ -566,8 +560,7 @@ axis(1, at = px, labels = tmp, las = 1)
 #----- Application Figure 4  ------# CUSUM Test Statistics Plot on Z
 ####################################
 # setEPS()
-# postscript("/Users/limo/Desktop/ClipVerify/PaperScriptsFinal/pic/ApplyFigure4.eps",
-#            width = 14, height = 7)
+# postscript("ApplyFigure4.eps", width = 14, height = 7)
 par(cex.lab=1, cex.axis=1.2, mfrow=c(1,1))
 plot(x=1:Ts, y=FitRes11$ItZ, type="l", col="black",
      xlab="Day", 
