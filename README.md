@@ -1,4 +1,4 @@
-# Changepoint-detection-in-autocorrelated-ordinal-categorical-time-series-published
+# Changepoint-detection-in-autocorrelated-ordinal-categorical-time-series
 
 Link: https://onlinelibrary.wiley.com/doi/abs/10.1002/env.2752
 
